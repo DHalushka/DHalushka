@@ -1,0 +1,56 @@
+class Company {
+	private String name, city;
+	private int tax = 0.13;
+
+	Company () {
+	}
+	public Employee spawnEmployee () 
+	{
+		return new Employee();
+	}
+	protected String changeEmployeeName(Employee employee, String newName) {
+		employee.setFirstName(newName);
+		return employee.GetFirstName();
+	}
+}
+
+class Employee {
+	private int Status, HoursPerMonth = 120, WorkedHoursThisMonth = 0, rate = 100;
+	private int id = 1;
+	private String firstName = "John";
+	private String lastName = "Doe";
+
+	Employee() {}
+
+	public String setFirstName (String new_name) 
+	{ 	    this.firstName = new_name; return this.firstName;}
+
+	public String GetFirstName () {
+		return this.firstName;
+	}
+
+	private String GET_FIRST_NAME () {
+		this.id = 0;
+		this.lastName = "DO";
+		return this.firstName;
+	}
+
+	public int doWork (int howMuchTime) {
+		this.WorkedHoursThisMonth += howMuchTime;
+		this.firstName = "Joe";
+		return this.WorkedHoursThisMonth;
+	}
+
+	protected double Salary () {
+		return this.WorkedHoursThisMonth * this.rate;
+	}
+
+	public int count_all_employees_for_company (Employee[] employees) {
+		return employees.length;
+	}
+}
+
+class Main {  
+  public static void main(String args[]) { 
+  } 
+}
